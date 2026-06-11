@@ -165,32 +165,19 @@ function doLogin() {
     const typed = document.getElementById('pwd').value.trim().toLowerCase();
 
     if (typed === PASSWORD) {
-        const now = new Date();
-
-        if (now >= UNLOCK_DATE) {
-            const lsmSeen = sessionStorage.getItem('lsmSeen');
-
-            if (!lsmSeen) {
-                showScreen('lsmp');
-            } else {
-                openApp();
-            }
+        const lsmSeen = sessionStorage.getItem('lsmSeen');
+        if (!lsmSeen) {
+            showScreen('lsmp');
         } else {
-            showScreen('cdp');
-            startLoginCountdown();
+            openApp();
         }
-
     } else {
         const e = document.getElementById('lerr');
         e.textContent = "Hmm, that's not right. Try again po, my bebe!";
         document.getElementById('pwd').value = '';
-
-        setTimeout(() => {
-            e.textContent = '';
-        }, 3000);
+        setTimeout(() => { e.textContent = ''; }, 3000);
     }
 }
-
 function openApp() {
     sessionStorage.setItem('lsmSeen', '1');
     showScreen('ap');
