@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Anniversary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="pts"></div>
+
+<!-- LOGIN -->
+<div id="lp" class="page active">
+  <span class="lhrt">♥</span>
+  <h1 class="ltit">Happy Anniversary!</h1>
+  <p class="lsub">A little something I made for you</p>
+  <div class="lbox">
+    <label class="lbl" for="pwd">Enter the password to continue</label>
+    <input type="password" id="pwd" placeholder="You know this one..." autocomplete="off"/>
+    <p class="lerr" id="lerr"></p>
+    <button class="bgold" onclick="doLogin()">Login</button>
+    <p class="lhint">Hint: the date it all started 🗓️</p>
+  </div>
+</div>
+
+<!-- COUNTDOWN SCREEN -->
+<div id="cdp" class="page">
+  <span class="lhrt">♥</span>
+  <h1 class="ltit">Almost time...</h1>
+  <p class="lsub">Our anniversary is coming</p>
+  <div class="lbox" style="text-align:center">
+    <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem">Unlocks on June 14, 2026 · 12:00 AM</p>
+    <div class="vcountdown" id="lcd">
+      <div class="vcd-block"><div class="vcd-num" id="lcd-d">--</div><div class="vcd-lbl">Days</div></div>
+      <div class="vcd-block"><div class="vcd-num" id="lcd-h">--</div><div class="vcd-lbl">Hours</div></div>
+      <div class="vcd-block"><div class="vcd-num" id="lcd-m">--</div><div class="vcd-lbl">Mins</div></div>
+      <div class="vcd-block"><div class="vcd-num" id="lcd-s">--</div><div class="vcd-lbl">Secs</div></div>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:1.5rem">Come back on our special day ♥</p>
+  </div>
+</div>
+
+<!-- LSM MESSAGE SCREEN -->
+<div id="lsmp" class="page">
+  <div class="lsm-wrap">
+    <span class="lhrt">♥</span>
+    <div class="lsm-box">
+      <p class="lsm-label">A message for you</p>
+
+      <div class="lsm-letter" id="lsm-content">
+        <!-- MESSAGE-->
+        Happy Anniversary, bebe!
+        <br><br>
+        Surprise! Sana nagustuhan mo itong ginawa kong simple website for us.
+        For this special day, i want us to bring back all the sweet memories we had together and see how far we've come.
+        Also to celebrate our anniversary and to show you how much I appreciate you and the time we spend together. 
+        Layo na natin oh, pero kahit ganun you still make me feel special and loved every day.
+        <br><br>
+        I know we have our ups and downs, pero sa lahat ng yun hindi natin mao-overcome if we dont choose to stay and forgive.
+        Above all, I'm always be grateful for every moment we've shared, and I look forward to creating many more beautiful 
+        memories with you in the years to come.
+        <br><br>
+        Again,Happy Anniversary Bebe.I hope you are happy and safe always🫶.
+         From your bebe
+       <br><br>
+        Ps.Dont expect too much from this website, i just want to make something simple and sweet for you. I love you!♥
+      </div>
+
+      <button class="bgold lsm-btn" onclick="openApp()">
+        Open Our Story ♥
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="ap" class="page">
+  <header class="hdr">
+    <div class="logo">Our Story <span>♥</span></div>
+    <button class="logoutb" onclick="doLogout()">Leave</button>
+  </header>
+
+  <div class="tbar">
+    <button class="tbtn active" onclick="switchTab('photos',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Photos</span>
+    </button>
+    <button class="tbtn" onclick="switchTab('audio',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>Music</span>
+    </button>
+    <button class="tbtn" onclick="switchTab('video',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3V10z"/></svg>
+      <span>Videos</span>
+    </button>
+
+  </div>
+
+  <!-- PHOTOS -->
+  <div id="tab-photos" class="tc active">
+    <p class="ssub">Our memories</p>
+    <h2 class="stit">Photo Gallery</h2>
+    <div class="yacc">
+
+      <!-- Y1 -->
+             <div class="yblk" id="yb-2023">
+        <div class="yhdr" onclick="toggleY('2023')">
+          <div class="yhl"><div class="ynum">01</div><div><div class="yit">Year 2022-2023</div><div class="yis" id="ys-2023">Complete the quiz to unlock</div></div></div>
+          <div class="yhr"><span class="lkbdg" id="lkb-2023">🔒 Locked</span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        </div>
+        <div class="ybody">
+          <div class="qgate" id="qg-2023">
+            <div class="qgt">Unlock Year 2023 Photos</div>
+            <div class="qgs">Answer all questions correctly to see the memories! ♥</div>
+            <div class="qgpbar"><div class="qgpfill" id="qgp-2023" style="width:0%"></div></div>
+            <div id="qgc-2023"></div>
+          </div>
+          <div class="pgrid" id="pg-2023" style="display:none">
+            <div class="pcard" data-cap="Yakap na yakap sya" onclick="openLB(this,'2023')"><img src="images/year2023/1.jpg"><div class="pcap">Yakap na yakap sya</div></div>
+            <div class="pcard" data-cap="First picture ever" onclick="openLB(this,'2023')"><img src="images/year2023/2.jpg"><div class="pcap">First picture ever</div></div>
+            <div class="pcard" data-cap="Ganda ng ngiti ko" onclick="openLB(this,'2023')"><img src="images/year2023/3.jpg"><div class="pcap">Ganda ng ngiti ko</div></div>
+            <div class="pcard" data-cap="Mga bading" onclick="openLB(this,'2023')"><img src="images/year2023/4.jpg"><div class="pcap">Mga bading</div></div>
+            <div class="pcard" data-cap="Yiee" onclick="openLB(this,'2023')"><img src="images/year2023/5.jpg"><div class="pcap">Yiee</div></div>
+            <div class="pcard" data-cap="Year 2023-2024 half heart" onclick="openLB(this,'2023')"><img src="images/year2023/6.jpg"><div class="pcap">Year 2023-2024 half heart</div></div>
+            <div class="pcard" data-cap="Fav ko to na pic mo" onclick="openLB(this,'2023')"><img src="images/year2023/7.jpg"><div class="pcap">Fav ko to na pic mo</div></div>
+            <div class="pcard" data-cap="High School life yarn" onclick="openLB(this,'2023')"><img src="images/year2023/8.jpg"><div class="pcap">High School life yarn</div></div>
+            <div class="pcard" data-cap="Sweet natin" onclick="openLB(this,'2023')"><img src="images/year2023/9.jpg"><div class="pcap">Sweet natin</div></div>
+            <div class="pcard" data-cap="Year 2023-2024ee" onclick="openLB(this,'2023')"><img src="images/year2023/10.jpg"><div class="pcap">Year 2023-2024ee</div></div>
+            <div class="pcard" data-cap="hehe" onclick="openLB(this,'2023')"><img src="images/year2023/11.jpg"><div class="pcap">hehe</div></div>
+            <div class="pcard" data-cap="Bading" onclick="openLB(this,'2023')"><img src="images/year2023/12.jpg"><div class="pcap">Bading</div></div>
+            <div class="pcard" data-cap="Eyyy" onclick="openLB(this,'2023')"><img src="images/year2023/13.jpg"><div class="pcap">Eyyy</div></div>
+            <div class="pcard" data-cap="Like kita" onclick="openLB(this,'2023')"><img src="images/year2023/14.jpg"><div class="pcap">Like kita</div></div>
+            <div class="pcard" data-cap="Triny salamin" onclick="openLB(this,'2023')"><img src="images/year2023/15.jpg"><div class="pcap">Triny salamin</div></div>
+            <div class="pcard" data-cap="Two peace" onclick="openLB(this,'2023')"><img src="images/year2023/16.jpg"><div class="pcap">Two peace</div></div>
+            <div class="pcard" data-cap="Dami pic a" onclick="openLB(this,'2023')"><img src="images/year2023/17.jpg"><div class="pcap">Dami pic a</div></div>
+            <div class="pcard" data-cap="Year 2023-2024 bebe" onclick="openLB(this,'2023')"><img src="images/year2023/18.jpg"><div class="pcap">Year 2023-2024 bebe</div></div>
+            <div class="pcard" data-cap="Mwaa" onclick="openLB(this,'2023')"><img src="images/year2023/19.jpg"><div class="pcap">Mwaa</div></div>
+            <div class="pcard" data-cap="Nasmile pero di kita haha" onclick="openLB(this,'2023')"><img src="images/year2023/20.jpg"><div class="pcap">Nasmile pero di kita haha</div></div>
+            <div class="pcard" data-cap="ikaw nag pic neto" onclick="openLB(this,'2023')"><img src="images/year2023/21.jpg"><div class="pcap">ikaw nag pic neto</div></div>
+            <div class="pcard" data-cap="Lab Room" onclick="openLB(this,'2023')"><img src="images/year2023/22.jpg"><div class="pcap"> Lab Room</div></div>
+            <div class="pcard" data-cap="First gala sa TC" onclick="openLB(this,'2023')"><img src="images/year2023/23.jpg"><div class="pcap">First gala sa TC</div></div>
+            <div class="pcard" data-cap="First gala sa TC" onclick="openLB(this,'2023')"><img src="images/year2023/24.jpg"><div class="pcap">First gala sa TC</div></div>
+            <div class="pcard" data-cap="Year 2023-2024 bebe" onclick="openLB(this,'2023')"><img src="images/year2023/25.jpg"><div class="pcap">Year 2023-2024 bebe</div></div>
+            <div class="pcard" data-cap="Landi" onclick="openLB(this,'2023')"><img src="images/year2023/26.jpg"><div class="pcap">Landi</div></div>
+            <div class="pcard" data-cap="Year 2023-2024 natin" onclick="openLB(this,'2023')"><img src="images/year2023/27.jpg"><div class="pcap">Year 2023-2024 natin</div></div>
+            <div class="pcard" data-cap="PeaceT" onclick="openLB(this,'2023')"><img src="images/year2023/28.jpg"><div class="pcap">PeaceT</div></div>
+            <div class="pcard" data-cap="Uwian na" onclick="openLB(this,'2023')"><img src="images/year2023/29.jpg"><div class="pcap">Uwian na</div></div>
+            <div class="pcard" data-cap="Year 2023-2024" onclick="openLB(this,'2023')"><img src="images/year2023/30.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap="Holding hands yiee" onclick="openLB(this,'2023')"><img src="images/year2023/31.jpg"><div class="pcap">Holding hands yiee</div></div>
+            <div class="pcard" data-cap="Eto yung alam mo na😆" onclick="openLB(this,'2023')"><img src="images/year2023/32.jpg"><div class="pcap">Eto yung alam mo na😆</div></div>
+            <div class="pcard" data-cap="Eto yung alam mo na😆" onclick="openLB(this,'2023')"><img src="images/year2023/33.jpg"><div class="pcap">Eto yung alam mo na😆</div></div>
+            <div class="pcard" data-cap="Eto yung alam mo na😆" onclick="openLB(this,'2023')"><img src="images/year2023/34.jpg"><div class="pcap">Eto yung alam mo na😆</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/35.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/36.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/37.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/38.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/40.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="Bida ang saya" onclick="openLB(this,'2023')"><img src="images/year2023/41.jpg"><div class="pcap">Bida ang saya</div></div>
+            <div class="pcard" data-cap="First time tumakas" onclick="openLB(this,'2023')"><img src="images/year2023/42.jpg"><div class="pcap">First time tumakas</div></div>
+            <div class="pcard" data-cap="Happy life" onclick="openLB(this,'2023')"><img src="images/year2023/43.jpg"><div class="pcap">Happy life</div></div>
+            <div class="pcard" data-cap="Year 2023-2024" onclick="openLB(this,'2023')"><img src="images/year2023/44.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap="Two peace again" onclick="openLB(this,'2023')"><img src="images/year2023/45.jpg"><div class="pcap">Two peace again</div></div>
+            <div class="pcard" data-cap="Cutie bebe" onclick="openLB(this,'2023')"><img src="images/year2023/46.jpg"><div class="pcap">Cutie bebe</div></div>
+            <div class="pcard" data-cap="Gala gala" onclick="openLB(this,'2023')"><img src="images/year2023/47.jpg"><div class="pcap">Gala gala</div></div>
+            <div class="pcard" data-cap="Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/48.jpg"><div class="pcap">Bonding in canteen</div></div>
+            <div class="pcard" data-cap="Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/49.jpg"><div class="pcap">Bonding in canteen</div></div>           
+            <div class="pcard" data-cap="Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/50.jpg"><div class="pcap">Bonding in canteen</div></div>
+              
+            <div class="pcard" data-cap=" Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/53.jpg"><div class="pcap">Bonding in canteen</div></div>
+            <div class="pcard" data-cap=" Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/54.jpg"><div class="pcap">Bonding in canteen</div></div>
+            <div class="pcard" data-cap=" Bonding in canteen" onclick="openLB(this,'2023')"><img src="images/year2023/55.jpg"><div class="pcap">Bonding in canteen</div></div>
+            <div class="pcard" data-cap=" Sleepy bebe" onclick="openLB(this,'2023')"><img src="images/year2023/56.jpg"><div class="pcap">Sleepy bebe</div></div>
+            <div class="pcard" data-cap=" Room vibez" onclick="openLB(this,'2023')"><img src="images/year2023/57.jpg"><div class="pcap">Room vibez</div></div>
+            <div class="pcard" data-cap=" Bebetime" onclick="openLB(this,'2023')"><img src="images/year2023/58.jpg"><div class="pcap">Bebetime</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024e" onclick="openLB(this,'2023')"><img src="images/year2023/59.jpg"><div class="pcap">Year 2023-2024e</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/60.jpg"><div class="pcap">Bonding in classroom</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/61.jpg"><div class="pcap">Bonding in classroom</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/62.jpg"><div class="pcap">Bonding in classroom</div></div><div class="pcard" data-cap=" First picture ever" onclick="openLB(this,'2023')"><img src="images/year2023/63.jpg"><div class="pcap">First picture ever</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/64.jpg"><div class="pcap">Bonding in classroom</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/65.jpg"><div class="pcap">Bonding in classroom</div></div>
+            <div class="pcard" data-cap=" Bonding in classroom" onclick="openLB(this,'2023')"><img src="images/year2023/66.jpg"><div class="pcap">Bonding in classroom</div></div>
+            <div class="pcard" data-cap=" First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/67.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap=" First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/69.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024 Pic" onclick="openLB(this,'2023')"><img src="images/year2023/70.jpg"><div class="pcap">Year 2023-2024 Pic</div></div>
+            <div class="pcard" data-cap=" First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/71.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap=" First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/72.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap="First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/73.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap=" First time rode a bus" onclick="openLB(this,'2023')"><img src="images/year2023/74.jpg"><div class="pcap">First time rode a bus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/75.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/76.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/77.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/78.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/79.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/80.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/81.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/82.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/83.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/84.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/85.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/86.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" TSU Lucinda Campus" onclick="openLB(this,'2023')"><img src="images/year2023/87.jpg"><div class="pcap">TSU Lucinda Campus</div></div>
+            <div class="pcard" data-cap=" School ulit" onclick="openLB(this,'2023')"><img src="images/year2023/88.jpg"><div class="pcap">School ulit</div></div>
+            <div class="pcard" data-cap=" School ulit" onclick="openLB(this,'2023')"><img src="images/year2023/89.jpg"><div class="pcap">School ulit</div></div>
+            <div class="pcard" data-cap=" Clinic" onclick="openLB(this,'2023')"><img src="images/year2023/90.jpg"><div class="pcap">Clinic</div></div>
+            <div class="pcard" data-cap=" Clinic" onclick="openLB(this,'2023')"><img src="images/year2023/91.jpg"><div class="pcap">Clinic</div></div>
+            <div class="pcard" data-cap=" Clinic" onclick="openLB(this,'2023')"><img src="images/year2023/92.jpg"><div class="pcap">Clinic</div></div>
+            <div class="pcard" data-cap=" Canteen" onclick="openLB(this,'2023')"><img src="images/year2023/93.jpg"><div class="pcap">Canteen</div></div>
+            <div class="pcard" data-cap=" Canteen" onclick="openLB(this,'2023')"><img src="images/year2023/94.jpg"><div class="pcap">Canteen</div></div>
+            <div class="pcard" data-cap=" Room" onclick="openLB(this,'2023')"><img src="images/year2023/96.jpg"><div class="pcap">Room</div></div>
+            <div class="pcard" data-cap=" Room" onclick="openLB(this,'2023')"><img src="images/year2023/97.jpg"><div class="pcap">Room</div></div>
+            <div class="pcard" data-cap=" Room" onclick="openLB(this,'2023')"><img src="images/year2023/98.jpg"><div class="pcap">Room</div></div>
+            <div class="pcard" data-cap=" Room" onclick="openLB(this,'2023')"><img src="images/year2023/99.jpg"><div class="pcap">Room</div></div>
+            <div class="pcard" data-cap=" Cute" onclick="openLB(this,'2023')"><img src="images/year2023/100.jpg"><div class="pcap">Cute</div></div>
+            <div class="pcard" data-cap=" Cute" onclick="openLB(this,'2023')"><img src="images/year2023/101.jpg"><div class="pcap">Cute</div></div>
+            <button class="addpcard" onclick="triggerAdd('2023')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Add photo</button>
+            <input type="file" accept="image/*" id="fi-2023" style="display:none" multiple onchange="addPhotos('2024',this)">
+          </div>
+          </div>
+        </div>
+     
+      <!-- Y2 -->
+ <div class="yblk" id="yb-2024">
+        <div class="yhdr" onclick="toggleY('2024')">
+          <div class="yhl"><div class="ynum">02</div><div><div class="yit">Year 2023-2024</div><div class="yis" id="ys-2024">Complete the quiz to unlock</div></div></div>
+          <div class="yhr"><span class="lkbdg" id="lkb-2024">🔒 Locked</span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        </div>
+        <div class="ybody">
+          <div class="qgate" id="qg-2024">
+            <div class="qgt">Unlock Year 2024 Photos</div>
+            <div class="qgs">Answer all questions correctly to see the memories! ♥</div>
+            <div class="qgpbar"><div class="qgpfill" id="qgp-2024" style="width:0%"></div></div>
+            <div id="qgc-2024"></div>
+          </div>
+          <div class="pgrid" id="pg-2024" style="display:none">
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/1.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/2.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/3.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/4.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/5.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/6.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/7.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/8.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/9.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/10.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/11.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/12.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/13.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/14.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/15.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/16.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/17.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/18.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/19.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/20.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/21.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/22.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/23.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/24.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/25.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/26.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/27.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/28.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/29.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/30.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/31.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/32.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/33.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/34.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/35.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/36.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/37.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/38.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/39.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/40.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/41.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/42.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/43.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/44.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/45.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/46.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/47.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/48.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/49.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/50.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/51.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/52.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/53.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/54.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/55.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/60.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/61.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/62.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/63.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/64.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/68.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/69.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/70.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/71.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/72.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/73.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/74.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/75.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/76.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/77.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/78.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/79.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/80.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/81.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/82.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/83.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/84.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/85.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/86.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/87.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/88.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/89.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/90.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/91.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/92.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/93.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/94.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/95.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/96.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/97.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/98.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/99.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/100.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/101.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/102.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/103.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/104.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/106.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024s')"><img src="images/year2024/107.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/108.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/109.jpg"><div class="pcap">Year 2023-2024</div></div>
+            <div class="pcard" data-cap=" Year 2023-2024" onclick="openLB(this,'2024')"><img src="images/year2024/110.jpg"><div class="pcap">Year 2023-2024</div></div>
+
+            <button class="addpcard" onclick="triggerAdd('2024')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Add photo</button>
+            <input type="file" accept="image/*" id="fi-2024" style="display:none" multiple onchange="addPhotos('2024',this)">
+          </div>
+          </div>
+        </div>
+
+      <!-- Y3 -->
+      <div class="yblk" id="yb-2025">
+        <div class="yhdr" onclick="toggleY('2025')">
+          <div class="yhl"><div class="ynum">03</div><div><div class="yit">Year 2024-2025</div><div class="yis" id="ys-2025">Complete the quiz to unlock</div></div></div>
+          <div class="yhr"><span class="lkbdg" id="lkb-2025">🔒 Locked</span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        </div>
+        <div class="ybody">
+          <div class="qgate" id="qg-2025">
+            <div class="qgt">Unlock Year 2025 Photos</div>
+            <div class="qgs">Answer all questions correctly to see the memories! ♥</div>
+            <div class="qgpbar"><div class="qgpfill" id="qgp-2025" style="width:0%"></div></div>
+            <div id="qgc-2025"></div>
+          </div>
+          <div class="pgrid" id="pg-2025" style="display:none">
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/1.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/2.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/3.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/4.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/5.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/6.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/7.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/8.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/9.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/10.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/11.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/12.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/13.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/14.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/15.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/16.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/17.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/18.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/19.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/20.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/21.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/22.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/23.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/24.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/25.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/26.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/27.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/28.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/29.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/30.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/31.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/32.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/33.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/34.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/35.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/36.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/37.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/38.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/39.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/40.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/41.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/42.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/43.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/44.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/45.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/46.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/47.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/49.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/50.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/51.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/52.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/53.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/54.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/55.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/56.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/57.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/58.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/59.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/60.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/62.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/63.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/64.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/65.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/66.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/67.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/68.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/69.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/70.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/71.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/72.jpg"><div class="pcap">Year 2024-2025</div></div> 
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/72.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/73.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/74.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/75.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/76.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/77.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/78.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/79.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/80.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/82.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/84.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/86.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/87.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/88.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/89.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/90.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/91.jpg"><div class="pcap">Year 2024-2025</div></div>
+              <div class="pcard" data-cap=" Year 2024-2025" onclick="openLB(this,'2025')"><img src="images/year2025/92.jpg"><div class="pcap">Year 2024-2025</div></div>
+            
+              
+              
+
+            <button class="addpcard" onclick="triggerAdd('2025')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Add photo</button>
+            <input type="file" accept="image/*" id="fi-2025" style="display:none" multiple onchange="addPhotos('2025',this)">
+          </div>
+          </div>
+        </div>
+
+      <!-- Y4 -->
+      <div class="yblk" id="yb-2026">
+        <div class="yhdr" onclick="toggleY('2026')">
+          <div class="yhl"><div class="ynum">04</div><div><div class="yit">Year 2025-2026</div><div class="yis" id="ys-2026">Complete the quiz to unlock</div></div></div>
+          <div class="yhr"><span class="lkbdg" id="lkb-2026">🔒 Locked</span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        </div>
+        <div class="ybody">
+          <div class="qgate" id="qg-2026">
+            <div class="qgt">Unlock Year 2026 Photos</div>
+            <div class="qgs">Answer all questions correctly to see the memories! ♥</div>
+            <div class="qgpbar"><div class="qgpfill" id="qgp-2026" style="width:0%"></div></div>
+            <div id="qgc-2026"></div>
+          </div>
+          <div class="pgrid" id="pg-2026" style="display:none">
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/1.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/2.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/3.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/4.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/5.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/6.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/7.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/8.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/9.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/10.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/11.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/12.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/13.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/14.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/15.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/16.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/17.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/18.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/19.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/20.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/21.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/22.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/23.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/24.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/25.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/26.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/27.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/28.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/29.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/30.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/31.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/32.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/33.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/34.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/35.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/36.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/37.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/38.jpg"><div class="pcap">Year 2025-2026</div></div>
+             <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/39.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/40.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/41.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/42.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/43.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/44.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/45.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/46.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/47.jpg"><div class="pcap">Year 2025-2026</div></div>
+             <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/48.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/49.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/50.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/51.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/53.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/54.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/55.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/56.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/57.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/58.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/60.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/61.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/62.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/63.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/64.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/65.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/66.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/67.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/68.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/69.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/70.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/71.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/72.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/73.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/74.jpg"><div class="pcap">Year 2025-2026</div></div>
+             <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/76.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/77.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/78.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/79.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/80.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/81.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/82.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/83.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/84.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/85.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/86.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/87.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/88.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/89.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/90.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/91.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/92.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/93.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/94.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/95.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/97.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/98.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/99.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/100.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/101.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/102.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/103.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/104.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/105.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/106.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/107.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/108.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/109.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/110.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/111.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/112.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/113.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/114.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/115.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/116.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/117.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/118.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/119.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/120.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/121.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/122.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/123.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/124.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/125.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/126.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/127.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/128.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/129.jpg"><div class="pcap">Year 2025-2026</div></div>
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/130.jpg"><div class="pcap">Year 2025-2026</div></div> 
+            <div class="pcard" data-cap=" Year 2025-2026" onclick="openLB(this,'2026')"><img src="images/year2026/140.jpg"><div class="pcap">Year 2025-2026</div></div>
+
+            <button class="addpcard" onclick="triggerAdd('2026')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Add photo</button>
+            <input type="file" accept="image/*" id="fi-2026" style="display:none" multiple onchange="addPhotos('2026',this)">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <div id="tab-audio" class="tc">
+    <p class="ssub">Songs I recorded for you</p>
+    <h2 class="stit">Music</h2>
+
+    <!-- Hidden audio elements -->
+    <audio id="a-1" src="Music/au1.mp3"></audio>
+    <audio id="a-2" src="Music/au2.mp3"></audio>
+    <audio id="a-3" src="Music/au3.mp3"></audio>
+    <audio id="a-4" src="Music/au4.mp3"></audio>
+    <audio id="a-5" src="Music/au5.mp3"></audio>
+    <audio id="a-6" src="Music/au6.mp3"></audio>
+    <audio id="a-7" src="Music/au7.mp3"></audio>
+    <audio id="a-8" src="Music/au8.mp3"></audio>
+    <audio id="a-9" src="Music/au9.mp3"></audio>
+    <audio id="a-10" src="Music/au10.mp3"></audio>
+    <audio id="a-11" src="Music/au11.mp3"></audio>
+    <audio id="a-12" src="Music/au12.mp3"></audio>
+    <audio id="a-13" src="Music/au13.mp3"></audio>
+    <audio id="a-14" src="Music/au14.mp3"></audio>
+    <audio id="a-15" src="Music/au15.mp3"></audio>
+    <audio id="a-16" src="Music/au16.mp3"></audio>
+    <audio id="a-17" src="Music/au17.mp3"></audio>
+    <audio id="a-18" src="Music/au18.mp3"></audio>
+    <audio id="a-19" src="Music/au19.mp3"></audio>
+    <audio id="a-20" src="Music/au20.mp3"></audio>
+    <audio id="a-21" src="Music/au21.mp3"></audio>
+    <audio id="a-22" src="Music/au22.mp3"></audio>
+    <audio id="a-23" src="Music/au23.mp3"></audio>
+    <audio id="a-24" src="Music/au24.mp3"></audio>
+    <audio id="a-25" src="Music/au25.mp3"></audio>
+    <audio id="a-26" src="Music/au26.mp3"></audio>
+    <audio id="a-27" src="Music/au27.mp3"></audio>
+    <audio id="a-28" src="Music/au28.mp3"></audio>
+    <audio id="a-29" src="Music/au29.mp3"></audio>
+    <audio id="a-30" src="Music/au30.mp3"></audio>
+    <audio id="a-31" src="Music/au31.mp3"></audio>
+    <audio id="a-32" src="Music/au32.mp3"></audio>
+    <audio id="a-33" src="Music/au33.mp3"></audio>
+    <audio id="a-34" src="Music/au34.mp3"></audio>
+    <audio id="a-35" src="Music/au35.mp3"></audio>
+    <audio id="a-36" src="Music/au36.mp3"></audio>
+    <audio id="a-37" src="Music/au37.mp3"></audio>
+    <audio id="a-38" src="Music/au38.mp3"></audio>
+    <audio id="a-39" src="Music/au39.mp3"></audio>
+    <audio id="a-40" src="Music/au40.mp3"></audio>
+  
+
+    <!-- Spotify-style player -->
+    <div class="sp-wrap">
+
+      <!-- Album art / disc -->
+      <div class="sp-art" id="sp-art">
+        <div class="sp-disc" id="sp-disc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Track info -->
+      <div class="sp-info">
+        <div class="sp-track" id="sp-track">Swear it again</div>
+        <div class="sp-sub" id="sp-sub">Westlife</div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="sp-prog-wrap">
+        <span class="sp-time" id="sp-cur">0:00</span>
+        <div class="sp-prog" id="sp-prog" onclick="spSeek(event)">
+          <div class="sp-progfill" id="sp-fill"></div>
+          <div class="sp-thumb" id="sp-thumb"></div>
+        </div>
+        <span class="sp-time" id="sp-dur">0:00</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="sp-controls">
+        <button class="sp-btn sp-prev" id="sp-prev" onclick="spPrev()" title="Previous">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+        </button>
+        <button class="sp-btn sp-play" id="sp-playbtn" onclick="spToggle()">
+          <svg id="sp-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="sp-btn sp-next" id="sp-next" onclick="spNext()" title="Next">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 3.9V8.1z"/><path d="M16 6h2v12h-2z"/></svg>
+        </button>
+      </div>
+
+      <!-- Volume -->
+      <div class="sp-vol">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        </svg>
+        <input type="range" class="sp-vol-slider" min="0" max="1" step="0.02" value="1" oninput="spVol(this.value)">
+      </div>
+
+      <!-- Track list -->
+      <div class="sp-list" id="sp-list"></div>
+      </div><!-- /sp-wrap -->
+    </div><!-- /tab-audio -->
+
+  <!-- VIDEO -->
+  <div id="tab-video" class="tc">
+    <p class="ssub">Moving memories</p>
+    <h2 class="stit">Videos</h2>
+    <div class="vcarousel-wrap">
+      <div class="vcarousel" id="vcarousel">
+        <div class="vtrack" id="vtrack">
+
+          <!-- Video 1 -->
+          <div class="vcard">
+            <div class="vthumb">
+              <video controls>
+                <source src="videos/Free Love.MOV" type="video/mp4">
+              </video>
+            </div>
+            <div class="vinfo">
+              <div class="vtit">Free Love 🎬</div>
+              <div class="vdat">Slide 1 of 3</div>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="vcard">
+            <div class="vthumb">
+              <video controls>
+                <source src="videos/Bonding with guitar.MOV" type="video/mp4">
+              </video>
+            </div>
+            <div class="vinfo">
+              <div class="vtit">Bonding with Guitar 🎸</div>
+              <div class="vdat">Slide 2 of 3</div>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="vcard">
+            <div class="vthumb">
+              <video controls>
+                <source src="videos/HBD.MOV" type="video/mp4">
+              </video>
+            </div>
+            <div class="vinfo">
+              <div class="vtit">HBD 🎂</div>
+              <div class="vdat">Slide 3 of 3</div>
+            </div>
+          </div>
+
+        </div><!-- /vtrack -->
+      </div><!-- /vcarousel -->
+
+      <button class="vcnav prev" id="vcprev" onclick="vcGo(-1)">‹</button>
+      <button class="vcnav next" id="vcnext" onclick="vcGo(1)">›</button>
+    </div>
+
+    <div class="vdots" id="vdots">
+      <div class="vdot active" onclick="vcGoto(0)"></div>
+      <div class="vdot" onclick="vcGoto(1)"></div>
+      <div class="vdot" onclick="vcGoto(2)"></div>
+    </div>
+  </div><!-- /tab-video -->
+
+</div><!-- /ap -->
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <button class="lbclose" onclick="closeLB()">×</button>
+  <div class="lbrow">
+    <button class="lbnav" id="lbprev" onclick="lbgo(-1)">‹</button>
+    <div class="lbwrap">
+      <img id="lbimg" src="" alt=""/>
+    </div>
+    <button class="lbnav" id="lbnext" onclick="lbgo(1)">›</button>
+  </div>
+  <div class="lbcap" id="lbcap"></div>
+  <div class="lbcount" id="lbcount"></div>
+  <div class="swipehint">Swipe left or right to navigate</div>
+</div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
