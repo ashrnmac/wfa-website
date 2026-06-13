@@ -217,6 +217,12 @@ function updateLoginCD() {
     document.getElementById('lcd-s').textContent = String(s).padStart(2,'0');
 }
 
+function openApp() {
+    sessionStorage.setItem('lsmSeen', '1');
+    showScreen('ap');
+    initYQ();
+}
+
 function doLogout() {
     stopAllA();
     showScreen('lp');
